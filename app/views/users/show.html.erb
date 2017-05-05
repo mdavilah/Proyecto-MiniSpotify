@@ -1,0 +1,6 @@
+<% @user.user_songs.each do |user_song| %>
+	<%= user_song.song.name %>
+	<% if can? :delete, user_song %>
+		<%= link_to 'Eliminar canción', remove_song_song_path(user_song.song), method: :delete %>
+	<% end %>
+<% end %>
